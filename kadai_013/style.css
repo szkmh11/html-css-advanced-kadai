@@ -1,27 +1,34 @@
 /* 基本スタイル */
 body {
-    font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
-    margin: 0;
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* メインビジュアル */
+#main-visual img {
+  width: 100%;
+}
+
+/* ヘッダー */
+header {
+  position: relative; /* 親要素に対して絶対位置指定するため、relativeに設定 */
+}
+
+/* PC用ナビゲーション */
+@media screen and (min-width: 768px) {
+  #nav-pc {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
   }
   
-  /* メインビジュアル */
-  #main-visual img {
-    width: 100%;
+  /* スマホ用要素を非表示 */
+  #menu-sp, #nav-sp {
+    display: none;
   }
-  
-  /* PC用ナビゲーション */
-  @media screen and (min-width: 768px) {
-    #nav-pc {
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-    }
-    /* スマホ用要素を非表示 */
-    #menu-sp, #nav-sp {
-      display: none;
-    }
-  }
-  
+}
+
 /* スマホ用ナビゲーション */
 @media screen and (max-width: 767px) {
   #nav-pc {
@@ -31,9 +38,13 @@ body {
   /* ハンバーガーメニュー */
   #menu-sp {
     display: block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    position: absolute; /* ヘッダー内で絶対配置 */
+    top: 10px;
+    right: 10px;
+    z-index: 200;
+    width: auto;
+    padding: 0;
+    margin: 0;
   }
 
   #nav-sp {
@@ -45,6 +56,7 @@ body {
     height: 100%;
     width: 100%;
     z-index: 100;
+    padding-top: 0;
   }
 
   #nav-sp ul {
@@ -64,11 +76,12 @@ body {
     font-size: 18px;
   }
 
-  /* ハンバーガーメニュー内のロゴを左端に配置し、下部に寄せる */
+  /* ロゴ配置 */
   #logo-sp {
     display: block;
-    margin-top: 80px;
-    margin-left: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
     margin-bottom: 30px;
   }
 
@@ -84,6 +97,7 @@ body {
     text-decoration: none;
   }
 
+  /* 閉じるボタン */
   #close {
     position: absolute;
     top: 20px;
