@@ -1,50 +1,94 @@
-/* 基本スタイル */
+/* PC、スマホ共通スタイル */
 body {
-  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+    sans-serif;
 }
 
-/* メインビジュアル */
-#main-visual img {
+p {
+  font-size: 15px;
+}
+
+#main-visual>img {
   width: 100%;
 }
 
-/* ヘッダー */
-header {
-  position: relative; /* 親要素に対して絶対位置指定するため、relativeに設定 */
-}
-
-/* PC用ナビゲーション */
+/*================
+PC用のスタイル 
+=================*/
 @media screen and (min-width: 768px) {
-  #nav-pc {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+  /* 横幅設定 */
+  body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto;
   }
-  
-  /* スマホ用要素を非表示 */
-  #menu-sp, #nav-sp {
+
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ナビゲーションのレイアウト */
+  #nav-pc {
+    text-align: right;
+    font-size: 14px;
+    padding-top: 15px;
+  }
+
+  /* ナビゲーションのリンクの装飾設定 */
+  #nav-pc>a {
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  #nav-pc>a:link {
+    color: #0d0d0d;
+  }
+
+  #nav-pc>a:visited {
+    color: #0d0d0d;
+  }
+
+  #nav-pc>a:hover {
+    color: #0d0d0d;
+    text-decoration: underline;
+  }
+
+  #nav-pc>a:active {
+    color: #0d0d0d;
+  }
+
+  #menu-sp {
     display: none;
   }
+
+  #nav-sp {
+    display: none;
+  }
+
 }
 
-/* スマホ用ナビゲーション */
+/*================
+スマホ用のスタイル 
+=================*/
 @media screen and (max-width: 767px) {
   #nav-pc {
     display: none;
   }
 
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+
   /* ハンバーガーメニュー */
   #menu-sp {
-    float: right;
-    position: absolute; /* ヘッダー内で絶対配置 */
+    display: block;
+    position: absolute;
     top: 0;
     right: 0;
-    z-index: 200;
-    width: auto;
-    padding: 0;
-    margin: 0;
+    z-index: 90;
   }
 
   #nav-sp {
@@ -56,7 +100,7 @@ header {
     height: 100%;
     width: 100%;
     z-index: 100;
-    padding-top: 0;
+    padding-top: 60px; /* ロゴの下にメニューが表示されるよう余白を設定 */
   }
 
   #nav-sp ul {
@@ -82,7 +126,7 @@ header {
     position: absolute;
     top: 20px;
     left: 20px;
-    margin-bottom: 30px;
+    z-index: 300;
   }
 
   /* メニュー項目のスタイル */
