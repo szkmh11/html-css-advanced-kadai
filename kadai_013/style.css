@@ -84,6 +84,8 @@ PC用のスタイル
 
   /* ハンバーガーメニュー */
   #menu-sp {
+    float: right;
+    padding:0;
     display: block;
     position: absolute;
     top: 0;
@@ -94,24 +96,35 @@ PC用のスタイル
   #nav-sp {
     display: none;
     background-color: #ce933e;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: 100;
-    padding-top: 60px; /* ロゴの下にメニューが表示されるよう余白を設定 */
+    /* padding-top: 150px; ロゴの下にメニューが表示されるよう余白を設定 */
   }
 
   #nav-sp ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+    padding-left: 0;
   }
 
   #nav-sp li {
-    margin: 20px 0;
+    margin: 20px 0; 
+    list-style: none;
+  }
+
+  /* 閉じるボタン */
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  /* ロゴ配置 */
+  #logo-sp {
+    margin: 20px 0px 30px 20px;
   }
 
   #nav-sp a {
@@ -121,6 +134,19 @@ PC用のスタイル
     font-size: 18px;
   }
 
+  /* メニュー項目のスタイル */
+  #nav-sp a.menu {
+    text-decoration: none;
+    display: block;
+    margin: 20px 20px;
+    height: 44px;
+    color: #ffffff;
+    font-size: 16px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+
+  }
   #nav-sp a:link{
     color: #ffffff;
   }
@@ -136,33 +162,5 @@ PC用のスタイル
   #nav-sp a:active{
     color: #ffffff;
   }
-  
-  /* ロゴ配置 */
-  #logo-sp {
-    display: block;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 300;
-  }
 
-  /* メニュー項目のスタイル */
-  #nav-sp a.menu {
-    display: block;
-    padding: 10px 20px;
-    color: #ffffff;
-    font-size: 18px;
-    background-image: url("images/arrow.png");
-    background-repeat: no-repeat;
-    background-position: right center;
-    text-decoration: none;
-  }
-
-  /* 閉じるボタン */
-  #close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-  }
 }
