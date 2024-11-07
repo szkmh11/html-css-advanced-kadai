@@ -115,11 +115,28 @@ PC用のスタイル
   }
 
   #nav-sp a {
+    display: block;
     color: #ffffff;
     text-decoration: none;
     font-size: 18px;
   }
 
+  #nav-sp a:link{
+    color: #ffffff;
+  }
+
+  #nav-sp a:visited{
+    color: #ffffff;
+  }
+
+  #nav-sp a:hover{
+    text-decoration: underline;
+  }
+
+  #nav-sp a:active{
+    color: #ffffff;
+  }
+  
   /* ロゴ配置 */
   #logo-sp {
     display: block;
